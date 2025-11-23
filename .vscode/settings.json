@@ -1,0 +1,3 @@
+{
+      "rust-analyzer.server.path": "rust-analyzer", // don't automatically download binary but use local one
+}
