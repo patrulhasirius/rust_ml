@@ -12,7 +12,7 @@ const TRAIN: [(f32, f32);5] = [
 const SEED: u64 = 69;
 const EPS: f32 = 1e-3;
 
-fn cost(train: &[(f32, f32)], w: f32, b :f32) -> f32 {
+fn cost(train: &[(f32, f32)], w: f32, b: f32) -> f32 {
     train
         .iter()
         .map(|(x, y)| (x * w + b, y))
