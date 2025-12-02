@@ -1,5 +1,5 @@
-use bevy::prelude::*;
-use rand::prelude::*;
+use ndarray_rand::rand::prelude::*;
+use rust_ml::nn::sigmoidf;
 
 #[rustfmt::skip]
 const TRAIN: [(f32, f32);5] = [
@@ -21,7 +21,7 @@ fn cost(train: &[(f32, f32)], w: f32, b: f32) -> f32 {
 }
 
 fn main() {
-    let mut rng: StdRng = rand::rngs::StdRng::seed_from_u64(SEED);
+    let mut rng: StdRng = StdRng::seed_from_u64(SEED);
     let rate = 1e-3;
     let mut w: f32 = rng.random_range(0.0..10.0);
     let mut b: f32 = rng.random_range(0.0..5.0);

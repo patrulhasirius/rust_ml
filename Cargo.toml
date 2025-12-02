@@ -1,5 +1,5 @@
 [package]
-name = "rust-ml"
+name = "rust_ml"
 version = "0.1.0"
 edition = "2024"
 
@@ -15,7 +15,9 @@ opt-level = 3
 [dependencies]
 bevy = { version = "0.17.3", features = ["dynamic_linking"] }
 derive_more = { version = "2.0.1", features = ["add", "mul"] }
-rand = "0.9.2"
+ndarray = { version = "0.17.1", features = ["matrixmultiply-threading"] }
+ndarray-rand = "0.16.0"
+nshare = "0.10.0"
 
 # Enable more optimization in the release profile at the cost of compile time.
 [profile.release]
