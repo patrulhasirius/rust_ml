@@ -10,7 +10,11 @@ codegen-backend = "llvm"
 [target.x86_64-unknown-linux-gnu]
 linker = "clang"
 rustflags = [
+  "-C", "link-arg=-fuse-ld=lld",
   # (Nightly) Make the current crate share its generic instantiations
   "-Ctarget-cpu=native",
   "-Zshare-generics=y",
 ]
+
+[target.x86_64-pc-windows-msvc]
+linker = "rust-lld.exe"
