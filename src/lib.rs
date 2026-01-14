@@ -94,22 +94,6 @@ impl<T: Float + SampleUniform + AddAssign + ScalarOperand + 'static> NN<T> {
         }
         c / T::from(ti.nrows()).unwrap()
     }
-    //fn finite_diff(&self, eps: T, ti: &NormalArray<T>, to: &NormalArray<T>) -> Self {
-    //    let mut saved: T;
-    //    let mut m = self.clone();
-    //    let mut g = self.clone();
-    //    let cost = m.cost(ti, to);
-    //    for i in 0..self.count {
-    //        for ((row, col), weight) in m.ws[i].indexed_iter_mut() {
-    //            saved = weight.clone();
-    //            *weight += eps;
-    //            let d = (m.cost(ti, to) - cost) / eps;
-    //            *g.ws[i].get_mut((row, col)).unwrap() = d;
-    //            *weight = saved;
-    //        }
-    //    }
-    //    todo!()
-    //}
     fn finite_diff(&self, eps: T, ti: &NormalArray<T>, to: &NormalArray<T>) -> Self {
         let mut m = self.clone();
         let mut g = self.clone();
